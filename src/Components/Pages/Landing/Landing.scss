@@ -1,0 +1,122 @@
+@import '../../../Shared/Colors/Colors.scss';
+@import '../../../Shared/Theme/Theme.scss';
+
+.landing-page-wrapper {
+  width: 100%;
+  height: 100%;
+  padding: 20px 0;
+  min-height: max-content;
+  background-image: url('../../../Assets/Images/background.png');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  position: relative;
+
+  .overlay {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    z-index: 0;
+  }
+
+  .section {
+    z-index: 1;
+    padding: 0 40px;
+
+    .title {
+      font-size: 25px;
+      color: $utility-1;
+      text-decoration: underline;
+    }
+
+    .text {
+      font-size: 18px;
+      color: $utility-1;
+    }
+  }
+
+  .hero-section {
+    text-align: center;
+
+    .title {
+      font-size: 60px;
+      font-weight: bold;
+      color: $utility-1;
+    }
+
+    .date {
+      font-size: 30px;
+      font-weight: medium;
+      color: $utility-1;
+    }
+
+    .description {
+      font-size: 20px;
+      font-weight: medium;
+      color: $utility-1;
+    }
+  }
+
+  .about-section {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    .cards-wrapper {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+
+      .imp-card {
+        height: 250px;
+        width: 250px;
+      }
+    }
+  }
+
+  .schedule-section {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    .text {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 20px;
+      text-align: center;
+      .circle {
+        height: 50px;
+        width: 50px;
+        color: $primary;
+        background-color: $utility-1;
+        border-radius: 100vh;
+      }
+      .content-1{
+        flex: 1;
+      }
+      .content-2 {
+        flex: 1;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $min-tablet-width) {
+  .landing-page-wrapper {
+    .schedule-section {
+      .text {
+        flex-direction: column;
+      }
+    }
+  }
+}

@@ -1,0 +1,74 @@
+@import '../../../Shared/Colors/Colors.scss';
+
+.card-wrapper {
+  cursor: pointer;
+  height: max-content;
+  width: max-content;
+  padding: 15px;
+  background-color: $utility-1;
+  box-shadow: 0px 5px 50px $shadow;
+  border-radius: 16px;
+  perspective: 800;
+  -webkit-perspective: 800;
+  -ms-perspective: 800;
+  -moz-perspective: 800;
+  -o-perspective: 800;
+  transform-style: preserve-3d;
+  transition: 0.5s;
+  -webkit-transform-style: preserve-3d;
+  -webkit-transition: 0.5s;
+  -moz-transform-style: preserve-3d;
+  -moz-transition: 0.5s;
+  -ms-transform-style: preserve-3d;
+  -ms-transition: 0.5s;
+  -o-transform-style: preserve-3d;
+  -o-transition: 0.5s;
+
+  .face {
+    height: 100%;
+    width: 100%;
+    font-size: 16px;
+    font-weight: medium;
+    color: $primary;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    -o-backface-visibility: hidden;
+
+    &.card-front {
+      font-size: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    &.card-back {
+      display: none;
+      transform: rotatey(-180deg);
+      -ms-transform: rotatey(-180deg);
+      -moz-transform: rotatey(-180deg);
+      -webkit-transform: rotatey(-180deg);
+      -o-transform: rotatey(-180deg);
+    }
+  }
+
+  &.flipped {
+    transform: rotatey(-180deg);
+    -ms-transform: rotatey(-180deg);
+    -moz-transform: rotatey(-180deg);
+    -webkit-transform: rotatey(-180deg);
+    -o-transform: rotatey(-180deg);
+
+    .face {
+      &.card-front {
+        display: none;
+      }
+      &.card-back {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+  }
+}
